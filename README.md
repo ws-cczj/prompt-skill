@@ -12,7 +12,35 @@
 
 ## 安装
 
-将仓库克隆到 Codex 的用户技能目录：
+### 使用 npx 安装（推荐）
+
+需要已安装 Node.js 和 npm，并满足 [skills CLI](https://github.com/vercel-labs/skills) 的 Node.js 版本要求。执行：
+
+```bash
+npx skills add ws-cczj/prompt-skill
+```
+
+可选择安装的 agent 和范围；在 agent 内运行时，CLI 可能自动选择当前 agent。默认安装到当前项目。仅为当前项目的 Codex 安装：
+
+```bash
+npx skills add ws-cczj/prompt-skill --agent codex
+```
+
+为当前用户的 Codex 安装，供不同项目使用：
+
+```bash
+npx skills add ws-cczj/prompt-skill --agent codex --global
+```
+
+仅查看仓库内可安装的技能：
+
+```bash
+npx skills add ws-cczj/prompt-skill --list
+```
+
+### 手动安装
+
+也可以将仓库克隆到 Codex 的用户技能目录：
 
 ```bash
 git clone https://github.com/ws-cczj/prompt-skill.git ~/.agents/skills/prompt-skill
