@@ -1,0 +1,4 @@
+interface:
+  display_name: "可见执行 Prompt"
+  short_description: "结合对话语境、有效约束与本地经验，先展示可见执行 Prompt 再完成原任务"
+  default_prompt: "使用 $prompt-skill 开启本会话每轮可见 prompt 测试，复核相关语境、约束与经验后先展示最终执行 prompt，再继续原任务。"
