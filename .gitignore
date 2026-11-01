@@ -2,3 +2,5 @@
 /evaluations/
 /tests/
 /test/
+# Project-specific working instructions are kept locally.
+/AGENTS.md
