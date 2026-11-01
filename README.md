@@ -12,15 +12,28 @@
 
 ## 项目文件
 
-- [`skills/prompt-skill/SKILL.md`](skills/prompt-skill/SKILL.md)：技能入口和执行线路。
-- [`skills/prompt-skill/experiences/index.md`](skills/prompt-skill/experiences/index.md)：本地经验索引与记录规则。
-- [`skills/prompt-skill/experiences/cases.md`](skills/prompt-skill/experiences/cases.md)：PPT、图片和多轮约束的初始待验证场景。
+- [`SKILL.md`](SKILL.md)：技能入口和执行线路。
+- [`experiences/index.md`](experiences/index.md)：本地经验索引与记录规则。
+- [`experiences/cases.md`](experiences/cases.md)：PPT、图片和多轮约束的初始待验证场景。
 - [`AGENTS.md`](AGENTS.md)：本项目每轮先展示 prompt 的测试约定。
-- [`skills/prompt-skill/references/rule-sync.md`](skills/prompt-skill/references/rule-sync.md)：项目与会话规则同步、修订及长对话恢复约定。
+- [`references/rule-sync.md`](references/rule-sync.md)：项目与会话规则同步、修订及长对话恢复约定。
+
+一个仓库就是一个 skill，目录结构如下：
+
+```text
+prompt-skill/
+├── SKILL.md
+├── README.md
+├── AGENTS.md
+├── agents/
+├── assets/
+├── experiences/
+└── references/
+```
 
 ## 使用
 
-将整个 `skills/prompt-skill` 目录复制到目标环境的技能目录，保留经验文件与内部结构。不要覆盖已有本地修改。
+将仓库克隆到目标环境的技能目录，例如 `~/.agents/skills/prompt-skill`，根目录即技能入口。已有目录时先检查差异，不覆盖本地修改。手动安装时只复制版本控制中的技能文件，不带入本地测试、会话记录或运行输出。
 
 ```text
 使用 $prompt-skill，开启本会话的每轮可见 prompt 测试。
@@ -45,14 +58,14 @@
 
 ## 主机级测试安装
 
-1. 将整个 `skills/prompt-skill` 复制到 `~/.agents/skills/prompt-skill`。目标存在时先检查差异，不覆盖本地改动。开发环境也可使用指向源目录的符号链接或 Windows 目录联接，便于同步更新。
-2. 仅在用户明确要求全机默认测试时，将 [全局入口模板](skills/prompt-skill/assets/global-AGENTS.md) 合并到 `<CODEX_HOME 或 ~/.codex>/AGENTS.md`。保留已有内容；存在 `AGENTS.override.md` 时先确认实际有效入口，避免写入被忽略的文件。
+1. 将本仓库克隆到 `~/.agents/skills/prompt-skill`。目标存在时先检查差异，不覆盖本地改动。开发环境也可使用指向仓库根目录的符号链接或 Windows 目录联接，便于同步更新。
+2. 仅在用户明确要求全机默认测试时，将 [全局入口模板](assets/global-AGENTS.md) 合并到 `<CODEX_HOME 或 ~/.codex>/AGENTS.md`。保留已有内容；存在 `AGENTS.override.md` 时先确认实际有效入口，避免写入被忽略的文件。
 3. 新开会话检查技能可发现、入口被读取、每轮展示 Markdown prompt。现有会话不能仅凭文件写入就断言已热加载。
 
 技能发现不等于每次调用；全局入口用于明确默认行为。用户说“本轮不展示”“本会话关闭”或“关闭主机测试”时按其范围调整，不扩大撤销范围。配置仅作用于安装它的用户环境，不改变模型权重。
 
-会话明细和测试输出位于本地忽略目录 `evaluations/`；推送仅包含技能、通用经验及说明。
+会话明细和测试输出仅保存在本地；`evaluations/`、`tests/` 和 `test/` 均由 Git 忽略。推送仅包含技能、通用经验及说明。
 
 ## 验证状态
 
-已完成结构检查、主机入口加载检查，以及明确修订、技能输入分工、缺少文档时拦截三个场景的行为检查，见 [检查记录](tests/smoke-evaluation.md)。这些结果不等于长对话性能或全部历史会话回放通过。
+已完成结构检查、主机入口加载检查，以及明确修订、技能输入分工、缺少文档时拦截三个场景的行为检查。详细测试记录仅留本地，不随技能发布。这些结果不等于长对话性能或全部历史会话回放通过。
