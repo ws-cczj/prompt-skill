@@ -133,3 +133,20 @@ node ~/.agents/skills/prompt-skill/scripts/enable.mjs --global
 项目持续规则维护在对应项目的 `AGENTS.md`；会话约定按真实会话 ID 隔离保存，不将一次性偏好扩展到其他任务。会话快照需要技能或入口显式读取，并非宿主内置的自动恢复功能。
 
 经验只用于辅助检查，不能覆盖当前用户的明确要求，也不能扩大操作权限。详细流程见 [技能入口](SKILL.md) 和 [规则同步说明](references/rule-sync.md)。
+
+## 更新
+
+远端发布不会自动替换已安装的文件。新版技能在新会话首次使用且网络允许时检查一次发布清单；也可手动检查项目安装：
+
+```bash
+node .agents/skills/prompt-skill/scripts/check-update.mjs
+```
+
+检查只读，不覆盖文件；无网络时返回“无法确认”并继续任务。发现更新后，先备份本地修改，再更新当前项目的技能并刷新入口：
+
+```bash
+npx skills update prompt-skill --project
+node .agents/skills/prompt-skill/scripts/enable.mjs --project .
+```
+
+全局安装使用 `npx skills update prompt-skill --global`，之后按全局安装路径运行 `enable.mjs --global`。重新打开Codex会话以加载新内容。没有检查脚本的旧版可重新执行安装命令，先保护本地修改。技能未被加载时不会自行检查，也不会创建后台更新任务。详见 [更新说明](references/updates.md)。
