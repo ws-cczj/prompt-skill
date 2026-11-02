@@ -38,6 +38,14 @@ npx skills add ws-cczj/prompt-skill --agent codex --global
 npx skills add ws-cczj/prompt-skill --list
 ```
 
+**安装不等于默认每轮启用。** npx 只安装技能，普通任务是否自动调用由 agent 决定；若希望当前项目每轮都使用，安装后在项目根目录继续执行：
+
+```bash
+node .agents/skills/prompt-skill/scripts/enable.mjs --project .
+```
+
+此命令在项目规则入口中合并一个独立区块，保留原有内容；存在生效的 `AGENTS.override.md` 时使用该入口。然后重新打开项目中的 Codex 会话。已有安装可先重新运行上面的安装命令获取新版脚本。
+
 ### 手动安装
 
 也可以将仓库克隆到 Codex 的用户技能目录：
@@ -95,7 +103,28 @@ prompt 根据任务复杂度组织为以下内容，简单请求会适当精简�
 
 ## 可选：默认每轮启用
 
-如希望在本机当前用户的 Codex 会话中默认使用，可将 [默认入口模板](assets/global-AGENTS.md) 合并到 `<CODEX_HOME 或 ~/.codex>/AGENTS.md`，保留已有规则。存在 `AGENTS.override.md` 时，应检查实际生效的入口。
+项目级安装后启用与检查：
+
+```bash
+node .agents/skills/prompt-skill/scripts/enable.mjs --project .
+node .agents/skills/prompt-skill/scripts/enable.mjs --project . --check
+```
+
+取消项目默认入口时使用同一路径并加上 `--disable`；只移除该脚本维护的区块，不删除技能或其他规则。
+
+全局安装后，为当前用户默认启用（Windows PowerShell）：
+
+```powershell
+node "$env:USERPROFILE/.agents/skills/prompt-skill/scripts/enable.mjs" --global
+```
+
+macOS / Linux：
+
+```bash
+node ~/.agents/skills/prompt-skill/scripts/enable.mjs --global
+```
+
+全局命令合并到 `<CODEX_HOME 或 ~/.codex>/AGENTS.md`，存在生效的 `AGENTS.override.md` 时使用后者。也可手动参考 [默认入口模板](assets/global-AGENTS.md) 合并规则。
 
 新开会话后确认是否加载。安装技能本身不等于每轮都会调用；全局入口用于设置默认行为，用户仍可在具体会话中关闭或调整。
 
