@@ -1,21 +1,21 @@
 {
   "schema": 1,
   "hashMode": "utf8-lf",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "files": {
-    "SKILL.md": "db74c8f390b1b7e557f71e22056776b0b00d21bf208e15e926936adabf59252f",
     "agents/openai.yaml": "ff7e9fb9a438f121ba04b1d3000a0055aa7d1e47e246ccea97e52e65b2679145",
     "assets/global-AGENTS.md": "b15a1d4e33bd8e29d86ce9600a7eb56be6059a922e687d01b747305d63791985",
     "experiences/cases.md": "15b8239344a1d76626d07f69c5c577b6e11c52b724610256aba4d5210a3af4e9",
-    "experiences/index.md": "5323d5a142534a8a828a7f2e43701dab5811bb8c01d32421d5f55f22c81f86d8",
+    "experiences/index.md": "1c0589fe969e46009c060999b5645577270837f02ee329ac6dbf81e8f57a0ff2",
     "experiences/interception.md": "52975941a7c171134505aabc9888482ee94f0b53c3e0f62844f8ff5a230e37eb",
     "experiences/observed-2026-11-01.md": "9899bf6e67de654b54009a3411b0029b505a1225528e94fb9ccb6c6da0e4aaea",
     "references/context-updates.md": "5998d918ea792bd820193781a29a13ddc9c018eebab13daf78a6e662c5dddf76",
     "references/conversation-replay.md": "433a7e30dc1e8446e4b3e5a7a0897da830d4ddf19abca59374359b1a53fcfca4",
-    "references/requirements.md": "0001f57e353fea838c63b7c1cb93d054452098eae91a3ca306947b0bcc6b03ae",
+    "references/requirements.md": "6db16c154b529f601284ba8b9f09767579219a538db4404a2085487d2c14e8e9",
     "references/rule-sync.md": "6252d5f328584326ea4169eafaa468e204959b713629d5ac353119d6744b3cc7",
     "references/updates.md": "4360441312cb1431b5ea7a899a182e06ab7efa9c5e52a14d0d964d75a4b1334b",
     "scripts/check-update.mjs": "bbe08036bb5ead22f2e0ced6d418b0ceb01c76790962e5a1555eb15d22523725",
-    "scripts/enable.mjs": "70c59e72a7dcff785b36b80e6cbbd173f744b58b6604ef7c865cf2635a2a6018"
+    "scripts/enable.mjs": "70c59e72a7dcff785b36b80e6cbbd173f744b58b6604ef7c865cf2635a2a6018",
+    "SKILL.md": "7ceb17b86cfda7fcef33ba9cf18ebc5520ca97ddae352dfe6b846d37285bf976"
   }
 }
