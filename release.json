@@ -1,9 +1,9 @@
 {
   "schema": 1,
   "hashMode": "utf8-lf",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "files": {
-    "agents/openai.yaml": "ff7e9fb9a438f121ba04b1d3000a0055aa7d1e47e246ccea97e52e65b2679145",
+    "agents/openai.yaml": "ef582182234da463fb2c9277109f795712adef38a781edb8a61e30d2f12a2c94",
     "assets/global-AGENTS.md": "b15a1d4e33bd8e29d86ce9600a7eb56be6059a922e687d01b747305d63791985",
     "experiences/cases.md": "15b8239344a1d76626d07f69c5c577b6e11c52b724610256aba4d5210a3af4e9",
     "experiences/index.md": "68b3b46bd37511af3434ada1dd9c7515775e838a64968294c003aee7a63f9df5",
@@ -12,11 +12,13 @@
     "references/context-updates.md": "5998d918ea792bd820193781a29a13ddc9c018eebab13daf78a6e662c5dddf76",
     "references/conversation-replay.md": "433a7e30dc1e8446e4b3e5a7a0897da830d4ddf19abca59374359b1a53fcfca4",
     "references/design-briefs.md": "67e1151b2d38f194a720d43188eeb94a398ff88fc8917ad6462e145b5989e3b7",
+    "references/interception.md": "b6928f84f8679b5da44b36adb67a70a363fe5c06a419084fc31796046aef238e",
     "references/requirements.md": "9a843bbb7f2aa2287fb860066df45544cc22f748c79b403b53fa0108fee1174c",
     "references/rule-sync.md": "6252d5f328584326ea4169eafaa468e204959b713629d5ac353119d6744b3cc7",
     "references/updates.md": "4360441312cb1431b5ea7a899a182e06ab7efa9c5e52a14d0d964d75a4b1334b",
+    "references/visible-prompt.md": "50897ab81b7cfa2553a069383049ac0495e47e03eb8c1870922a73c654398546",
     "scripts/check-update.mjs": "bbe08036bb5ead22f2e0ced6d418b0ceb01c76790962e5a1555eb15d22523725",
     "scripts/enable.mjs": "70c59e72a7dcff785b36b80e6cbbd173f744b58b6604ef7c865cf2635a2a6018",
-    "SKILL.md": "81ea4322be84fa5c086a51dfbf49868315c511bd7fc881d9802278f61d56b262"
+    "SKILL.md": "64583e292e5d5c633893fd5cf6fed04312b259f4160e9a9b959415204db7751b"
   }
 }
